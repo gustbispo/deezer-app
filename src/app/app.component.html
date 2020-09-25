@@ -14,7 +14,7 @@
         </button>
       </div>
 </div>
-<table mat-table [dataSource]="musicas">
+<table mat-table [dataSource]="musicas" *ngIf="showTable">
 
   <ng-container matColumnDef="img_album">
     <th mat-header-cell *matHeaderCellDef></th>

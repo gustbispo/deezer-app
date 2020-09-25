@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'deezer-front';
   columnsToDisplay = ['img_album', 'nome_album','title','artista', 'rank', 'link'];
   musicas: Track[];
+  showTable: boolean = false;
 
   constructor(private deezerService: DeezerService) {}
 
@@ -20,6 +21,7 @@ export class AppComponent {
   }
 
   getTrack(){
+    this.showTable = true;
     this.deezerService.getTrack(this.pesquisa).subscribe((musicas: any) => {
       this.musicas = musicas.data;
     });
