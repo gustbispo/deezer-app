@@ -1,0 +1,23 @@
+mat-toolbar {
+    display: flex;
+    justify-content: center;
+}
+
+.pesquisa {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.example-full-width {
+    text-align: center;
+    width: 25%;
+}
+
+.border{
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.font{
+    color: white;
+}
