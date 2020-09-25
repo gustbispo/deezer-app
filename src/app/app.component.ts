@@ -10,7 +10,7 @@ import { Track } from './models/track';
 export class AppComponent {
   pesquisa: string;
   title = 'deezer-front';
-  columnsToDisplay = ['img_album','title','artista', 'rank', 'link',];
+  columnsToDisplay = ['img_album', 'nome_album','title','artista', 'rank', 'link'];
   musicas: Track[];
 
   constructor(private deezerService: DeezerService) {}
