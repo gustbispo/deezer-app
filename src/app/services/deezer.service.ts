@@ -8,12 +8,20 @@ import { Track } from '../models/track';
   providedIn: 'root'
 })
 export class DeezerService {
-  url: string = 'http://localhost:3000/';
+  url: string = 'http://localhost:8080/';
 
   constructor(private httpClient: HttpClient) { }
 
+  // Headers
+  httpOptions = {
+    headers: new HttpHeaders({ 
+      'Content-Type': 'application/json',
+     'Access-Control-Allow-Origin': 'Accept' 
+    })
+  }
+
   getTrack(search: string): Observable<Track[]> {
-    return this.httpClient.get<Track[]>(this.url + 'data')
+    return this.httpClient.get<Track[]>(this.url + 'tracks/' + search)
       .pipe(
         retry(2),
         catchError(this.handleError)
