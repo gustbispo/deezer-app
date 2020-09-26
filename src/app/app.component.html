@@ -14,7 +14,7 @@
         </button>
       </div>
 </div>
-<table mat-table [dataSource]="musicas" *ngIf="showTable">
+<table mat-table [dataSource]="musicas" *ngIf="showTable" matSort>
 
   <ng-container matColumnDef="img_album">
     <th mat-header-cell *matHeaderCellDef></th>
@@ -24,17 +24,19 @@
   </ng-container>
 
   <ng-container matColumnDef="nome_album">
-    <th mat-header-cell *matHeaderCellDef> Álbum </th>
-    <td mat-cell *matCellDef="let musica"> {{musica.nome_album}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Álbum </th>
+    <td mat-cell *matCellDef="let musica"> 
+      {{musica.nome_album | slice:0:35}}
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef> Título </th>
-    <td mat-cell *matCellDef="let musica"> {{musica.title}} </td>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Título </th>
+    <td mat-cell *matCellDef="let musica"> {{musica.title | slice:0:35}} </td>
   </ng-container>
 
   <ng-container matColumnDef="artista">
-    <th mat-header-cell *matHeaderCellDef> Artista </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Artista </th>
     <td mat-cell *matCellDef="let musica"> {{musica.artista}} </td>
   </ng-container>
 
